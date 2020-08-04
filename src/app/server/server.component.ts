@@ -3,7 +3,10 @@ import {Component} from '@angular/core';
   selector: 'app-server',
   templateUrl: './server.component.html',
   styles: [
-    `p{
+`    .offline {
+      color: aliceblue;
+     }
+      p{
       /*background-color: cornflowerblue;*/
       padding: 20px;
     }`
@@ -12,7 +15,7 @@ import {Component} from '@angular/core';
 
 export class ServerComponent{
   serverId = 10;
-  serverStatus = 'offline';
+  serverStatus = '';
 
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
@@ -20,6 +23,6 @@ export class ServerComponent{
   // tslint:disable-next-line:typedef
   getColor() {
     // tslint:disable-next-line:no-unused-expression
-     return this.serverStatus === 'online' ? 'green' : 'red';
+     return this.serverStatus === 'online' ? 'green' : 'darkred';
   }
 }
