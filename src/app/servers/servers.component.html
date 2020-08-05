@@ -29,5 +29,5 @@
 
 <p [innerHTML]="serverCreationStatus"></p>
 <p [innerHTML]="allowNewServer"></p>
-<app-server></app-server>
+<app-server *ngFor="let server of serversArray"></app-server>
 

@@ -10,6 +10,7 @@ export class ServersComponent implements OnInit {
   serverCreated = false;
   serverCreationStatus = 'Button Click: No Server was created';
   serverName = 'Default Name';
+  serversArray = ['Test Server I', 'Test Server II'];
   constructor() {
     setTimeout(() => {this.allowNewServer = true; }, 2000);
   }
@@ -19,6 +20,7 @@ export class ServersComponent implements OnInit {
   // tslint:disable-next-line:typedef
   onCreateServer() {
     this.serverCreated = true;
+    this.serversArray.push(this.serverName)
     this.serverCreationStatus = 'Button Click: Server was created with the name: ' + this.serverName;
   }
 
